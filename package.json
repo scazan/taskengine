@@ -1,0 +1,24 @@
+{
+  "name": "taskengine",
+  "version": "1.0.0",
+  "description": "Uses a simple json file so it can be consumed via a number of other interfaces (command line, phone, web, etc) . Supports subtasks, deadlines, single subtasks assigned to multiple tasks, and all the normal things a task manager does.",
+  "main": "taskengine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scazan/taskengine.git"
+  },
+  "keywords": [
+    "task",
+    "command-line",
+    "json"
+  ],
+  "author": "Scott Cazan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scazan/taskengine/issues"
+  },
+  "homepage": "https://github.com/scazan/taskengine"
+}
