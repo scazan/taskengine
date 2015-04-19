@@ -130,8 +130,6 @@ module.exports = function() {
 				if(parseInt(taskData,10) > -1) {
 					subTaskList = this.getTaskByID(parseInt(taskData,10)).subTasks;
 
-					// If we passed a number instead of data, use the 5th argument and add it as a subtask
-					// ************ FIX THIS REFERENCE ******
 					parsedData = this.parseInputData(subTaskData);
 					subTask = true;
 				}
