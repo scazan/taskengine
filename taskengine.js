@@ -85,11 +85,11 @@ module.exports = function() {
 		 * @return {object} The parsed object
 		 */
 		parseInputData: function parseInputData(data) {
-			var params = data.split(","),
+			var params = data.split("', "),
 			parsedObject = {};
 
 			for(var i=params.length-1; i >=0; i--) {
-				var keyValue = params[i].split(":");
+				var keyValue = params[i].split(": '");
 
 				parsedObject[ keyValue[0].split(' ').join('') ] = keyValue[1];
 			}
