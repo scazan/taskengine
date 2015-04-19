@@ -85,13 +85,29 @@ module.exports = function() {
 		 * @return {object} The parsed object
 		 */
 		parseInputData: function parseInputData(data) {
-			var params = data.split("', "),
-			parsedObject = {};
+			var keyValRegExPattern = /[a-zA-Z]*:/g;
+			var keys = data.match(keyValRegExPattern),
+				values = data.split(keyValRegExPattern),
+				parsedObject = {};
 
-			for(var i=params.length-1; i >=0; i--) {
-				var keyValue = params[i].split(": '");
+			// Pop the first blank one off the top
+			values.shift();
 
-				parsedObject[ keyValue[0].split(' ').join('') ] = keyValue[1];
+
+			for(var i=values.length-1; i >=0; i--) {
+				var value = values[i],
+					key = keys[i];
+
+				// Trim whitespace
+				value = value.trim();
+
+				// Trim any trailing commas
+				if(value[value.length-1] === ",") {
+					value = value.substring(0, value.length-1);
+				}
+
+				// Add to object and trim trailing : from key
+				parsedObject[ key.substring(0,key.length-1) ] = value;
 			}
 
 			return parsedObject;
